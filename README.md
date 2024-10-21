@@ -24,6 +24,7 @@
     press SHIFT + F1, será  apresentado a tela com a estrutura do erro
 
 ![alt text](image.png)
-<!-- Exemplo -->
+
+## Exemplo
     SELECT ROWID,COD_REP,DESCRICAO,NOME_FAN,DT_CAD,CORE,CNPJ,CPF,CEP,ENDERECO,LOGRADOURO,NR_ENDERECO,COMPLEMENTO,BAIRRO,CID_ID,QTDE_MAQ_PALM,ID,REPESTFOR_ID,CAT_REP_ID,TPREP_ID FROM TREPRESENTANTES WHERE ( TREPRESENTANTES.ID in (select ter.rep_id from temp_rep ter where ter.empr_id in (select tm1.id from tempresas tm1 where tm1.id not in (select distinct pais.empr_id from tempresas pais where pais.empr_id is not Null) start with tm1.id = :1 connect by prior tm1.id= tm1.empr_id)) OR NOT EXISTS (select ter.rep_id from temp_rep ter where ter.rep_id = TREPRESENTANTES.ID) ) and (wdsdf) order by COD_REP
 
