@@ -1,22 +1,22 @@
 ## Lista de Empresas e atendimentos FOCCO - Modelo Vencedor
 
-Tratamento visualização DATA →
+#   Tratamento visualização DATA →
     TO_CHAR(TORDENS.DT_EMISSAO,'DD/MM/RRRR')
 
-Filtro de data inicio e data Final →
+# Filtro de data inicio e data Final →
     TRUNC(SYSDATE) BETWEEN TCAD_EST_ITE.DT_INI AND TCAD_EST_ITE.DT_FIM
 
-Switch → 
+# Switch → 
     CASE WHEN THEN ELSE END
     CASE TEMPRESAS.ID WHEN 1 THEN 'MATRIZ'
     WHEN 2 THEN 'BENTO'
     WHEN 3 THEN 'SANTA CRUZ'
     ELSE 'POA' END
 
-Calculo de MESES ou ANOS →
+# Calculo de MESES ou ANOS →
     TRUNC(ADD_MONTHS(SYSDATE,-60))
 
-Macete para ver a estrutura do cadastro de dados no focco
+# Macete para ver a estrutura do cadastro de dados no focco
     Entrar em uma tela de cadastro
     press F7 digite ':a', pode ser qualquer letra depois dos dois pontos
     press F8 digite 'asd', pode ser qualquer texto para dar um erro
