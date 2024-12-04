@@ -1,0 +1,51 @@
+DECLARE v_tblocos_cab_din_id   tblocos_cab_dinamico.id%TYPE; v_tdecode_campos_id    tdecode_campos_cab_din.id%TYPE; v_tlink_blocos_id      tlink_blocos_cab_dinamico.id%TYPE; vCabDinId              tcab_dinamico.id%TYPE; vColDinId              tcampos_cab_dinamico.id%TYPE; vTabDinOriId           tblocos_cab_dinamico.id%TYPE; vTabDinDesId           tblocos_cab_dinamico.id%TYPE;BEGIN  SELECT seq_id_tcab_dinamico.nextval   INTO vCabDinId   FROM dual;
+INSERT INTO tcab_dinamico(id,descricao,col_pk_id,col_fk_id,tipo_rel,ordem_rel,cab_din_pai_id,tipo_txt,align_car,car_align_car,separador,separador_alt,sep_esq,sep_dir,mascara_data,sep_campos,decimais,qtde_registros,total_geral,regra,sel_dinamica_pes,quebras_do_lado,tem_distinct
+                                          ,foccomail ) VALUES(vCabDinId,'Relatório de itens que controlam lote _MV',NULL,NULL,'',NULL,NULL,'L','E','','','','','','','',NULL,NULL,0,0,0,0,0,<FOCCOMAIL> );
+ SELECT seq_id_tblocos_cab_dinamico.nextval INTO v_tblocos_cab_din_id FROM dual;
+INSERT INTO tblocos_cab_dinamico(id,
+                                                  cab_din_id,
+                                                  bloco,
+                                                  tabela) VALUES(v_tblocos_cab_din_id,vCabDinId,'TITENS','TITENS');
+ SELECT seq_id_tblocos_cab_dinamico.nextval INTO v_tblocos_cab_din_id FROM dual;
+INSERT INTO tblocos_cab_dinamico(id,
+                                                  cab_din_id,
+                                                  bloco,
+                                                  tabela) VALUES(v_tblocos_cab_din_id,vCabDinId,'TITENS_EMPR','TITENS_EMPR');
+ SELECT seq_id_tblocos_cab_dinamico.nextval INTO v_tblocos_cab_din_id FROM dual;
+INSERT INTO tblocos_cab_dinamico(id,
+                                                  cab_din_id,
+                                                  bloco,
+                                                  tabela) VALUES(v_tblocos_cab_din_id,vCabDinId,'TEMPRESAS','TEMPRESAS');
+ SELECT seq_id_tblocos_cab_dinamico.nextval INTO v_tblocos_cab_din_id FROM dual;
+INSERT INTO tblocos_cab_dinamico(id,
+                                                  cab_din_id,
+                                                  bloco,
+                                                  tabela) VALUES(v_tblocos_cab_din_id,vCabDinId,'TITENS_ESTOQUE','TITENS_ESTOQUE');
+ SELECT seq_id_tblocos_cab_dinamico.nextval INTO v_tblocos_cab_din_id FROM dual;
+INSERT INTO tblocos_cab_dinamico(id,
+                                                  cab_din_id,
+                                                  bloco,
+                                                  tabela) VALUES(v_tblocos_cab_din_id,vCabDinId,'TALMOXARIFADOS','TALMOXARIFADOS');
+ SELECT seq_id_tcampos_cab_dinamico.nextval INTO vColDinId FROM dual;
+INSERT INTO tcampos_cab_dinamico(id,campo,linha,coluna,largura,separador,decimais,datatype,restricao,formula,cab_din_id,descricao,quebra,ordem,tipo,mascara,alinhamento,exibe_totais,ordem_sql,ordem_grafico,aceita_restricao,restricao2,restricao_job,separador_alt,align_car,car_align_car,mascara_data,sep_esq,sep_dir,acumulador,fonte_nome,fonte_tamanho,fonte_cor,fonte_negrito,fonte_sublinhado,fonte_italico,fonte_riscado,formato) VALUES (vColDinId,'TITENS.COD_ITEM',1,NULL,10,'',NULL,'VARCHAR2','','NONE',vCabDinId,'COD_ITEM',NULL,NULL,'V','','',0,2,NULL,1,'','','','E','','','','',0,'Courier New',10,'#000000',0,0,0,0,'G');
+ SELECT seq_id_tcampos_cab_dinamico.nextval INTO vColDinId FROM dual;
+INSERT INTO tcampos_cab_dinamico(id,campo,linha,coluna,largura,separador,decimais,datatype,restricao,formula,cab_din_id,descricao,quebra,ordem,tipo,mascara,alinhamento,exibe_totais,ordem_sql,ordem_grafico,aceita_restricao,restricao2,restricao_job,separador_alt,align_car,car_align_car,mascara_data,sep_esq,sep_dir,acumulador,fonte_nome,fonte_tamanho,fonte_cor,fonte_negrito,fonte_sublinhado,fonte_italico,fonte_riscado,formato) VALUES (vColDinId,'TITENS.DESC_TECNICA',1,NULL,70,'',NULL,'VARCHAR2','','NONE',vCabDinId,'DESC_ITEM',NULL,NULL,'V','','',0,3,NULL,0,'','','','E','','','','',0,'Courier New',10,'#000000',0,0,0,0,'G');
+ SELECT seq_id_tcampos_cab_dinamico.nextval INTO vColDinId FROM dual;
+INSERT INTO tcampos_cab_dinamico(id,campo,linha,coluna,largura,separador,decimais,datatype,restricao,formula,cab_din_id,descricao,quebra,ordem,tipo,mascara,alinhamento,exibe_totais,ordem_sql,ordem_grafico,aceita_restricao,restricao2,restricao_job,separador_alt,align_car,car_align_car,mascara_data,sep_esq,sep_dir,acumulador,fonte_nome,fonte_tamanho,fonte_cor,fonte_negrito,fonte_sublinhado,fonte_italico,fonte_riscado,formato) VALUES (vColDinId,'TEMPRESAS.COD_EMP',1,NULL,4,'',0,'NUMBER','','NONE',vCabDinId,'COD_EMP',NULL,NULL,'V','','',0,1,NULL,1,'','','','E','','','','',0,'Courier New',10,'#000000',0,0,0,0,'G');
+ SELECT seq_id_tcampos_cab_dinamico.nextval INTO vColDinId FROM dual;
+INSERT INTO tcampos_cab_dinamico(id,campo,linha,coluna,largura,separador,decimais,datatype,restricao,formula,cab_din_id,descricao,quebra,ordem,tipo,mascara,alinhamento,exibe_totais,ordem_sql,ordem_grafico,aceita_restricao,restricao2,restricao_job,separador_alt,align_car,car_align_car,mascara_data,sep_esq,sep_dir,acumulador,fonte_nome,fonte_tamanho,fonte_cor,fonte_negrito,fonte_sublinhado,fonte_italico,fonte_riscado,formato) VALUES (vColDinId,'decode(TITENS_EMPR.SIT,1, ''Ativo'', ''Inativo'')',1,NULL,10,'',0,'VARCHAR2','','NONE',vCabDinId,'SITUAÇÃO',NULL,NULL,'V','','D',0,4,NULL,1,'','','','E','','','','',0,'Courier New',10,'#000000',0,0,0,0,'G');
+ SELECT seq_id_tcampos_cab_dinamico.nextval INTO vColDinId FROM dual;
+INSERT INTO tcampos_cab_dinamico(id,campo,linha,coluna,largura,separador,decimais,datatype,restricao,formula,cab_din_id,descricao,quebra,ordem,tipo,mascara,alinhamento,exibe_totais,ordem_sql,ordem_grafico,aceita_restricao,restricao2,restricao_job,separador_alt,align_car,car_align_car,mascara_data,sep_esq,sep_dir,acumulador,fonte_nome,fonte_tamanho,fonte_cor,fonte_negrito,fonte_sublinhado,fonte_italico,fonte_riscado,formato) VALUES (vColDinId,'decode(TITENS_ESTOQUE.INDIC_ESTQ_LOTE,1, ''Ativo'', ''Inativo'')',1,NULL,1,'',0,'VARCHAR2','','NONE',vCabDinId,'INDIC_ESTQ_LOTE',NULL,NULL,'V','','',0,6,NULL,1,'','','','E','','','','',0,'Courier New',10,'#000000',0,0,0,0,'G');
+ SELECT seq_id_tcampos_cab_dinamico.nextval INTO vColDinId FROM dual;
+INSERT INTO tcampos_cab_dinamico(id,campo,linha,coluna,largura,separador,decimais,datatype,restricao,formula,cab_din_id,descricao,quebra,ordem,tipo,mascara,alinhamento,exibe_totais,ordem_sql,ordem_grafico,aceita_restricao,restricao2,restricao_job,separador_alt,align_car,car_align_car,mascara_data,sep_esq,sep_dir,acumulador,fonte_nome,fonte_tamanho,fonte_cor,fonte_negrito,fonte_sublinhado,fonte_italico,fonte_riscado,formato) VALUES (vColDinId,'TALMOXARIFADOS.COD_ALMOX',1,NULL,10,'',NULL,'VARCHAR2','','NONE',vCabDinId,'COD_ALMOX',NULL,NULL,'V','','',0,7,NULL,1,'','','','E','','','','',0,'Courier New',10,'#000000',0,0,0,0,'G');
+ SELECT seq_id_tcampos_cab_dinamico.nextval INTO vColDinId FROM dual;
+INSERT INTO tcampos_cab_dinamico(id,campo,linha,coluna,largura,separador,decimais,datatype,restricao,formula,cab_din_id,descricao,quebra,ordem,tipo,mascara,alinhamento,exibe_totais,ordem_sql,ordem_grafico,aceita_restricao,restricao2,restricao_job,separador_alt,align_car,car_align_car,mascara_data,sep_esq,sep_dir,acumulador,fonte_nome,fonte_tamanho,fonte_cor,fonte_negrito,fonte_sublinhado,fonte_italico,fonte_riscado,formato) VALUES (vColDinId,'DECODE(titens_estoque.tp_lote, ''C'',''Certificado'', ''H'',''Herdado demanda'', ''G'', ''Gerado'', ''F'',''Fórmula'')',1,NULL,15,'',NULL,'VARCHAR2','','NONE',vCabDinId,'TP_LOTE',NULL,NULL,'V','','',0,5,NULL,0,'','','','E','','','','',0,'Courier New',10,'#000000',0,0,0,0,'G');
+ SELECT ID   INTO vTabDinOriId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TEMPRESAS'    AND bloco = 'TEMPRESAS'    AND cab_din_id = vCabDinId; SELECT ID   INTO vTabDinDesId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TITENS_EMPR'    AND bloco = 'TITENS_EMPR'    AND cab_din_id = vCabDinId; SELECT seq_id_tlink_blocos_cab_din.nextval INTO v_tlink_blocos_id FROM dual;
+ INSERT INTO tlink_blocos_cab_dinamico(id,bloco_origem_id,coluna_origem,bloco_destino_id,coluna_destino,outer_origem,outer_destino) VALUES (v_tlink_blocos_id,vTabDinOriId,'ID',vTabDinDesId,'EMPR_ID',0,0);
+ SELECT ID   INTO vTabDinOriId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TITENS'    AND bloco = 'TITENS'    AND cab_din_id = vCabDinId; SELECT ID   INTO vTabDinDesId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TITENS_EMPR'    AND bloco = 'TITENS_EMPR'    AND cab_din_id = vCabDinId; SELECT seq_id_tlink_blocos_cab_din.nextval INTO v_tlink_blocos_id FROM dual;
+ INSERT INTO tlink_blocos_cab_dinamico(id,bloco_origem_id,coluna_origem,bloco_destino_id,coluna_destino,outer_origem,outer_destino) VALUES (v_tlink_blocos_id,vTabDinOriId,'ID',vTabDinDesId,'ITEM_ID',0,0);
+ SELECT ID   INTO vTabDinOriId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TALMOXARIFADOS'    AND bloco = 'TALMOXARIFADOS'    AND cab_din_id = vCabDinId; SELECT ID   INTO vTabDinDesId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TITENS_ESTOQUE'    AND bloco = 'TITENS_ESTOQUE'    AND cab_din_id = vCabDinId; SELECT seq_id_tlink_blocos_cab_din.nextval INTO v_tlink_blocos_id FROM dual;
+ INSERT INTO tlink_blocos_cab_dinamico(id,bloco_origem_id,coluna_origem,bloco_destino_id,coluna_destino,outer_origem,outer_destino) VALUES (v_tlink_blocos_id,vTabDinOriId,'ID',vTabDinDesId,'ALMOX_ID',0,0);
+ SELECT ID   INTO vTabDinOriId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TITENS_EMPR'    AND bloco = 'TITENS_EMPR'    AND cab_din_id = vCabDinId; SELECT ID   INTO vTabDinDesId   FROM tblocos_cab_dinamico b  WHERE tabela = 'TITENS_ESTOQUE'    AND bloco = 'TITENS_ESTOQUE'    AND cab_din_id = vCabDinId; SELECT seq_id_tlink_blocos_cab_din.nextval INTO v_tlink_blocos_id FROM dual;
+ INSERT INTO tlink_blocos_cab_dinamico(id,bloco_origem_id,coluna_origem,bloco_destino_id,coluna_destino,outer_origem,outer_destino) VALUES (v_tlink_blocos_id,vTabDinOriId,'ID',vTabDinDesId,'ITEMPR_ID',0,0);
+end;

@@ -1,0 +1,106 @@
+@charset "windows-1252";
+
+A:link    { background: transparent; color: #0000FF;
+            text-decoration: underline; }
+A:visited { background: transparent; color: #800080;
+            text-decoration: underline; }
+A:hover   { background: transparent; color: #FF0000;
+            text-decoration: underline; }
+
+BODY { COLOR : #000000;
+       FONT-FAMILY : MS Shell Dlg 2;
+       BACKGROUND : url(toadback.jpg)}
+
+TABLE {
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TABLE.nav {border-style: none; border-width: 0;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TH {COLOR: #000000;
+    BACKGROUND: #00FFFF;
+    TEXT-ALIGN: left;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TD {COLOR: #000000;
+    TEXT-ALIGN: left;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TD.rt {COLOR: #000000;
+    TEXT-ALIGN: right;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TD.rtr {COLOR: #FF0000;
+    FONT-WEIGHT: bold;
+    TEXT-ALIGN: right;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TD.rtb {COLOR: #000080;
+    FONT-WEIGHT: bold;
+    TEXT-ALIGN: right;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TD.red {COLOR: #FF0000;
+    FONT-WEIGHT: bold;
+    TEXT-ALIGN: left;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+TD.blue {COLOR: #000080;
+    FONT-WEIGHT: normal;
+    TEXT-ALIGN: left;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.h1 {COLOR: #000000;)
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 18pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.h2 {COLOR: #000000;)
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 18pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.h3 {COLOR: #000000;)
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.h4 {COLOR: #000000;)
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.f1 {COLOR: #000000;)
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.f2 {COLOR: #000000;)
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.f3 {COLOR: #000000;)
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
+CENTER.f4 {COLOR: #000000;)
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 8pt;
+    FONT-FAMILY: MS Shell Dlg 2}
+
